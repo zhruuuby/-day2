@@ -1,11 +1,17 @@
-## Leecode_ [203. 移除链表元素](https://leetcode.cn/problems/remove-linked-list-elements/)
-给你一个链表的头节点 `head` 和一个整数 `val` ，请你删除链表中所有满足 `Node.val == val` 的节点，并返回 **新的头节点** 。
-**示例 1：**
+Leecode_ 203. 移除链表元素
+给你一个链表的头节点 head 和一个整数 val ，请你删除链表中所有满足 Node.val == val 的节点，并返回 新的头节点 。
+示例 1：
 
-![](https://assets.leetcode.com/uploads/2021/03/06/removelinked-list.jpg)
+
 
 输入：head = [1,2,6,3,4,5,6], val = 6
 输出：[1,2,3,4,5]
 
 思路：
-快慢指针i，j；`j=i->next；`如果`j=val`，则`i`直接连接`j->next`，释放`j`，然后`j`指向`next`
+快慢指针i，j；j=i->next；如果j=val，则i直接连接j->next，释放j，然后j指向next
+
+无虚拟头结点
+要区分头结点和非头结点的满足情况
+
+头结点的值等于val，则直接移动头结点即可
+非头结点的值等于val，则头结点不动，要新建结点
